@@ -6,7 +6,7 @@ App.Todos = (Ember.ObjectController.extend(
     {done: false, content: "todo 2"}
   ]
   label: (->
-    "Add #" + (@get("todos").length + 1) + " todo"
+    "Add ##{@get("todos").length + 1} todo"
   ).property("todos")
 )).create()
 
@@ -28,5 +28,5 @@ App.AddView = Ember.View.create(
 )
 
 Ember.Handlebars.registerBoundHelper "format", (todo) ->
-  tagName = (if todo.done then "del" else "span")
+  tagName = if todo.done then "del" else "span"
   new Handlebars.SafeString("<" + tagName + ">" + todo.content + "</" + tagName + ">")

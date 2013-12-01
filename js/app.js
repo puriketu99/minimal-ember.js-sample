@@ -40,7 +40,7 @@
 
   Ember.Handlebars.registerBoundHelper("format", function(todo) {
     var tagName;
-    tagName = (todo.done ? "del" : "span");
+    tagName = todo.done ? "del" : "span";
     return new Handlebars.SafeString("<" + tagName + ">" + todo.content + "</" + tagName + ">");
   });
 
