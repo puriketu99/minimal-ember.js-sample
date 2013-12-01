@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Minimal Ember.js</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <script type="text/x-handlebars" id="todos">
+    <ul>
+    {{#each todo in view.todos}}
+      <li>{{format todo}}</li>
+    {{/each}}
+    </ul>
+  </script>
+  <script type="text/x-handlebars" id="add">
+    <button>{{view.label}}</button>
+  </script>
+  <script type="text/x-handlebars">
+    <h4>Todos</h4>
+    {{view App.TodosView}}
+    {{view App.AddView}}
+  </script>
+  <script src="js/libs/jquery-1.10.2.js"></script>
+  <script src="js/libs/handlebars-1.1.2.js"></script>
+  <script src="js/libs/ember-1.2.0.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
